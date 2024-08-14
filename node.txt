@@ -1,0 +1,30 @@
+Active Record Pattern
+    - The active-record pattern is a simple data-access method that maps a database table or view into an object. The fields map one to one, usually without modification
+    - This is usually powered by an ORM(Object Relational Mapper)
+    - Prevent Duplication and Centralize Access (By having a simple mapping between our database columns and object properties, we can treat every object the same)
+
+    Drawbacks
+        - Objects are tightly coupled to the database schema (The individual object properties map one-to-one with our database schema and if the database or the object needs a change, the other one has to also change)
+        - Objects are tightly couples to the database itself (It's hard to test the code without using an actual database, Unit Testing makes database acts slow down the process and sometimes makes it impossible)    # this can be mitigated by using dependency injection or mocking but there's still an issue.
+
+    Example : User Model
+
+
+Adapter Pattern
+    - The adapter pattern adjusts the interface of one class to match that of another (Pluggable Components)
+    - It we don't use an adapter, we end up with our implementation details all over our system and it begins to make our system as messy as theirs. THe adapter pattern just allows us to encapsulate the mess and keep it all in one location making it easier to maintain and manage without getting out of control
+
+    Drawbacks
+        - An adapter just hides bad design or ugly code from the rest of our system
+
+    Example : Different Database Connection for one application
+
+
+Decorator Pattern
+    - A decorator allows us to add specific behaviors to the instance of a class instead of attaching them to the object itself
+    - The most common place this is used is in templating systems (take an object, load it into a formatting or template object, and transform it for presentation)
+
+    Drawbacks
+        - Testing can be hard (Instead of just loading an object and validating a few properties, we have to create the correct base object, load it into the actual decorator object, and then test those results.)
+
+    Example : HTML or JSON Encoder

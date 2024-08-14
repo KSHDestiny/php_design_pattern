@@ -1,0 +1,10 @@
+{
+    "require": {
+        "illuminate/database": "4.2.*"
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": false
+        }
+    }
+}
