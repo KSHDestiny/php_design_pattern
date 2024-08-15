@@ -1,3 +1,10 @@
 /1.active_record/example/vendor
 /2.adapter/example/vendor
 /2.adapter/simple/vendor
+/4.factory/example/vendor
+/5.mock_objects/example/vendor
+/6.mvc/example/vendor
+/8.publish_subscribe/example/vendor
+/10.strategy/example/vendor
+/11.table_data_gateway/example/vendor
+/11.table_data_gateway/challenge/vendor

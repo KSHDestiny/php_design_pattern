@@ -28,3 +28,83 @@ Decorator Pattern
         - Testing can be hard (Instead of just loading an object and validating a few properties, we have to create the correct base object, load it into the actual decorator object, and then test those results.)
 
     Example : HTML or JSON Encoder
+
+
+Factory Pattern
+    - Allows us to create an object without needing direct access to the creation logic
+    - Standardizing Interfaces (When we're using various database connections, we'll want to have separate logic for MySQL, another for Oracle, and another for SQL Server but as far as our code is concerned)
+
+    Drawbacks
+        - Refactoring to use this can be painful
+        - Subclasses may have a lot of boilerplate
+
+    Example : Loading files
+
+
+Mock Objects
+    - Mock objects are simulated objects that mimic the behavior of real objects in controlled and specified ways
+
+    Drawbacks
+        - Could be tightly coupled with implementation
+        - Could accidentally test internal behavior
+        - False sense of confidence
+
+
+MVC Pattern (Model-View-Controller)
+    - The MVC pattern separates the concerns of the data (Model) from the presentation of the data (View) and manipulating the data (Controller)
+
+    Drawbacks
+        - The model could be incomplete since the controller tells the model what to do (our first impulse would be to perform the data validation there in the controller)
+        - The controller should just dispatch commands
+        - Basically, the controller could do too much
+
+
+Action-Domain-Responder Pattern
+    - A refinement of MVC that transforms the View portion into more specific responder implementation that handles all aspects of the HTTP response: sessions, cookies, HTML, content types, etc
+    - Clarity
+    - The point of this structure is that the domain has all of the business logic, the actions handles all of the routing logic and the responders have all the response logic
+
+    Drawbacks
+        - New, not many implementations in the wild
+        - Limited documentation
+
+
+Publish-Subscribe Pattern
+    - A communications pattern where messages are broadcast to a common channel and received by specific receivers
+    - Tight coupling
+    - Scalability
+
+    Drawbacks
+        - Interface-design issues (they all have to speak the same language)
+        - Message delivery (Since a publisher doesn't know the subscriber received a message, or even if a subscriber is listening)
+
+
+Singletons Pattern
+    - The singleton pattern restricts a given object to having one single, global instance across the entire application
+    - It's a kind of problematic pattern
+    
+    The Problem
+        - Shared/limited resources (There's a single resource that is shared by all components all over the system) # a common one is a database connection
+
+    Drawbacks
+        - Glorifies Globals
+
+
+Strategy Pattern
+    - Allows us to define and choose an implementation at runtime and vary that implementation independent of the object itself
+    - Open/Closed Principle (Open for extension but closed for modification)
+    - When we need to add behavior, we should extend the class (Inheritance is one more of doing that)
+
+    The Problem
+        - Same goal, different implementations
+
+    
+Table Data Gateway Pattern
+    - The table data gateway extracts all the database interactions from the model to a single unified location
+
+    The Problem
+        - Mixed business & database logic
+
+    Drawbacks
+        - Only designed for groups of objects (entire tables)
+        - Not good for multiple/complex relationships
